@@ -1,31 +1,26 @@
 <template>
   <div>
-    <div
-      v-for="(fetch_post, index) in fetch_posts"
-      :key="index"
-      class="accordion"
-      id="accordionExample"
-    >
-      <div class="accordion-item">
-        <h2 class="accordion-header">
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item" v-for="item in fetch_posts" :key="item.id">
+        <h2 class="accordion-header" :key="item.id">
           <button
-            class="accordion-button collapsed"
+            class="accordion-button"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#collapseTwo"
+            :data-bs-target="`#collapseOne${item.id}`"
             aria-expanded="false"
-            aria-controls="collapseTwo"
+            :aria-controls="`collapseOne${item.id}`"
           >
-            {{ fetch_post.title.rendered }}
+            {{ item.title.rendered }}
           </button>
         </h2>
         <div
-          id="collapseTwo"
+          :id="`collapseOne${item.id}`"
           class="accordion-collapse collapse"
           data-bs-parent="#accordionExample"
         >
           <div class="accordion-body">
-            <p v-html="fetch_post.content.rendered" />
+            <p v-html="item.content.rendered" />
           </div>
         </div>
       </div>
