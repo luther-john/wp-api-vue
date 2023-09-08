@@ -48,7 +48,7 @@
 export default {
   name: "ThawteSSL",
   data: () => ({
-    fetch_certs: [],
+    fetch_thawte: [],
     isLoaded: false,
     thawtesslData: [
       {

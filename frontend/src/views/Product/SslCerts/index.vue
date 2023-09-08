@@ -4,6 +4,18 @@
       <nav>
         <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
           <button
+            class="nav-link active"
+            id="nav-all-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-all"
+            type="button"
+            role="tab"
+            aria-controls="nav-all"
+            aria-selected="true"
+          >
+            ALL
+          </button>
+          <button
             class="nav-link"
             id="nav-digicert-tab"
             data-bs-toggle="tab"
@@ -40,7 +52,7 @@
             THAWTE
           </button>
           <button
-            class="nav-link active"
+            class="nav-link"
             id="nav-rapidssl-tab"
             data-bs-toggle="tab"
             data-bs-target="#nav-rapidssl"
@@ -55,12 +67,23 @@
       </nav>
       <div class="tab-content p-3 border bg-light" id="nav-tabContent">
         <div
+          class="tab-pane fade active show"
+          id="nav-all"
+          role="tabpanel"
+          aria-labelledby="nav-all-tab"
+        >
+          <DigiCert />
+          <GeoTrustSSL />
+          <ThawteSSL />
+          <RapidSSL />
+        </div>
+        <div
           class="tab-pane fade"
           id="nav-digicert"
           role="tabpanel"
           aria-labelledby="nav-digicert-tab"
         >
-          Digicert
+          <DigiCert />
         </div>
         <div
           class="tab-pane fade"
@@ -79,7 +102,7 @@
           <ThawteSSL />
         </div>
         <div
-          class="tab-pane fade active show"
+          class="tab-pane fade"
           id="nav-rapidssl"
           role="tabpanel"
           aria-labelledby="nav-rapidssl-tab"
@@ -93,6 +116,7 @@
 
 <script>
 // @ is an alias to /src
+import DigiCert from "@/views/Product/SslCerts/DigiCert.vue";
 import RapidSSL from "@/views/Product/SslCerts/RapidSsl.vue";
 import GeoTrustSSL from "@/views/Product/SslCerts/GeoTrustSSL.vue";
 import ThawteSSL from "@/views/Product/SslCerts/ThawteSSL.vue";
@@ -100,14 +124,23 @@ import ThawteSSL from "@/views/Product/SslCerts/ThawteSSL.vue";
 export default {
   name: "SslCerts",
   components: {
+    DigiCert,
     RapidSSL,
     GeoTrustSSL,
     ThawteSSL,
   },
-  data: () => ({
-    fetch_certs: [],
-    isLoaded: false,
-  }),
 };
 </script>
-<style scoped></style>
+<style scoped>
+.nav-tabs .nav-link.active {
+  background-color: #51a547;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  border-radius: 16px;
+}
+</style>

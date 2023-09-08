@@ -10,7 +10,7 @@
       <nav>
         <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
           <button
-            class="nav-link"
+            class="nav-link active"
             id="nav-home-tab"
             data-bs-toggle="tab"
             data-bs-target="#nav-home"
@@ -46,7 +46,7 @@
             Client(S/MIME) Certificates
           </button>
           <button
-            class="nav-link active"
+            class="nav-link"
             id="nav-contact-tab"
             data-bs-toggle="tab"
             data-bs-target="#nav-sitelock"
@@ -61,7 +61,7 @@
       </nav>
       <div class="tab-content p-3 border bg-light" id="nav-tabContent">
         <div
-          class="tab-pane fade"
+          class="tab-pane fade active show"
           id="nav-home"
           role="tabpanel"
           aria-labelledby="nav-home-tab"
@@ -85,7 +85,7 @@
           <ClientCertsTable />
         </div>
         <div
-          class="tab-pane fade active show"
+          class="tab-pane fade"
           id="nav-sitelock"
           role="tabpanel"
           aria-labelledby="nav-sitelock-tab"
@@ -112,10 +112,6 @@ export default {
     SiteLockTable,
     SslCerts,
   },
-  data: () => ({
-    fetch_product: [],
-    isLoaded: false,
-  }),
 };
 </script>
 <style scoped>
