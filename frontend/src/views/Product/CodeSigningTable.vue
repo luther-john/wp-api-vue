@@ -2,21 +2,21 @@
   <div>
     <table class="table table-hover">
       <thead>
-        <tr style="background-color: #1774bb !important">
-          <th scope="col">
+        <tr>
+          <th scope="col" style="background-color: #1774bb !important">
             <img :src="image" alt="..." />
           </th>
           <th colspan="6" style="background-color: #1774bb !important">
             <h1 class="cct">
-              DigiCert certificate secures your data and increases your
-              credibility. It offers security with easy validations and the best
-              features far beyond the encryption.
+              DigiCert Code Signing Certificates protect users from tampering
+              and downloading compromised software. It provides the trusted
+              authentication by using a digital signature.
             </h1>
           </th>
         </tr>
-        <tr class="clients--certs">
-          <td colspan="7">
-            <h2>Client Certificates</h2>
+        <tr>
+          <td colspan="7" class="clients--certs">
+            <h2>Code Signing Certificates</h2>
           </td>
         </tr>
         <tr>
@@ -28,22 +28,7 @@
           <th scope="col" class="clients--th">&nbsp;</th>
         </tr>
       </thead>
-      <tr>
-        <td scope="row" align="left">
-          DigiCert Email Signing (S/MIME) Certificate
-        </td>
-        <td>$30.52/yr</td>
-        <td>18.25%</td>
-        <td>See List</td>
-        <td>-</td>
-        <td><a class="btn-bn" href="#">Buy Now</a></td>
-      </tr>
-      <tr class="clients--document">
-        <td colspan="7">
-          <h2>Document Signing Certificates</h2>
-        </td>
-      </tr>
-      <tbody v-for="item in sitelockData" :key="item.id">
+      <tbody v-for="item in codeSignData" :key="item.id">
         <tr>
           <td scope="row" align="left">{{ item.title }}</td>
           <td>{{ item.price }}</td>
@@ -62,42 +47,26 @@
 <script>
 // @ is an alias to /src
 export default {
-  name: "ClientCertsTable",
+  name: "CodeSigningTable",
   data: () => ({
-    fetch_sitelocks: [],
+    fetch_codesign: [],
     isLoaded: false,
-    sitelockData: [
+    codeSignData: [
       {
         id: 1,
-        title: "Document Signing - Individual(500)",
-        price: "$300.67/yr",
+        title: "DigiCert Code Signing Certificates",
+        price: "$427.61/yr",
         discount: "15.00%",
         features: "See List",
-        validation: "-",
+        validation: "OV",
       },
       {
         id: 2,
-        title: "Document Signing - Individual(2000)",
-        price: "$410.13/yr",
+        title: "DigiCert EV Code Signing Certificates",
+        price: "$598.97/yr",
         discount: "15.00%",
         features: "See List",
-        validation: "-",
-      },
-      {
-        id: 3,
-        title: "Document Signing - Individual(500)",
-        price: "$410.00/yr",
-        discount: "15.00%",
-        features: "See List",
-        validation: "-",
-      },
-      {
-        id: 4,
-        title: "Document Signing - Individual(5000)",
-        price: "$633.96/yr",
-        discount: "15.00%",
-        features: "See List",
-        validation: "-",
+        validation: "EV",
       },
     ],
     image:
@@ -106,10 +75,6 @@ export default {
 };
 </script>
 <style scoped>
-.table {
-  --bs-table-bg: none !important;
-}
-
 .cct {
   font-size: 20px;
   color: #fff;
@@ -119,26 +84,13 @@ export default {
   background: #00345f;
 }
 
-.clients--document {
-  background: #00345f;
-}
-
-.clients--document h2 {
-  color: #fff;
-  font-size: 22px;
-  line-height: 45px;
-  text-transform: uppercase;
-  position: relative;
-  left: -392px;
-}
-
 .clients--certs h2 {
   color: #fff;
   font-size: 22px;
   line-height: 45px;
   text-transform: uppercase;
   position: relative;
-  left: -462px;
+  left: -401px;
 }
 
 .clients--th {

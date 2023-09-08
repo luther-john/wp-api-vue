@@ -66,16 +66,7 @@
           role="tabpanel"
           aria-labelledby="nav-home-tab"
         >
-          <p>
-            <strong
-              >This is some placeholder content the Home tab's associated
-              content.</strong
-            >
-            Clicking another tab will toggle the visibility of this one for the
-            next. The tab JavaScript swaps classes to control the content
-            visibility and styling. You can use it with tabs, pills, and any
-            other <code>.nav</code>-powered navigation.
-          </p>
+          <SslCerts />
         </div>
         <div
           class="tab-pane fade"
@@ -83,16 +74,7 @@
           role="tabpanel"
           aria-labelledby="nav-profile-tab"
         >
-          <p>
-            <strong
-              >This is some placeholder content the Profile tab's associated
-              content.</strong
-            >
-            Clicking another tab will toggle the visibility of this one for the
-            next. The tab JavaScript swaps classes to control the content
-            visibility and styling. You can use it with tabs, pills, and any
-            other <code>.nav</code>-powered navigation.
-          </p>
+          <CodeSigningTable />
         </div>
         <div
           class="tab-pane fade"
@@ -117,14 +99,18 @@
 
 <script>
 // @ is an alias to /src
+import SslCerts from "@/views/Product/SslCerts/index.vue";
 import SiteLockTable from "@/views/Product/SiteLockTable.vue";
+import CodeSigningTable from "@/views/Product/CodeSigningTable.vue";
 import ClientCertsTable from "@/views/Product/ClientCertsTable.vue";
 
 export default {
   name: "ProductSection",
   components: {
+    CodeSigningTable,
     ClientCertsTable,
     SiteLockTable,
+    SslCerts,
   },
   data: () => ({
     fetch_product: [],
